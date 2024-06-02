@@ -38,6 +38,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="findButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EWa-EH-gJD"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

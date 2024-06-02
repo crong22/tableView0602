@@ -10,6 +10,7 @@ import UIKit
 class mainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     let toplist = ["카페","지하철역","식당","영화관"]
     var bottomlist = StoreList.store
+    var titlename = StoreList.store
     
     @IBOutlet var mainView: UIView!
     
@@ -45,9 +46,20 @@ class mainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         configureTableView()
         
-        
     }
-        
+    
+    @IBAction func findButtonClicked(_ sender: UIButton) {
+        var mainname : [Store] = []
+        var textname = findTextField.text!
+        for i in titlename {
+            if i.title.contains(textname){
+                mainname.append(i)
+            }
+        }
+        bottomlist = mainname
+        bottomTableView.reloadData()
+    }
+    
     func configureTableView() {
         let xib = UINib(nibName: "CategoryTableViewCell", bundle: nil)
         topTableView.register(xib, forCellReuseIdentifier: "CategoryTableViewCell")
