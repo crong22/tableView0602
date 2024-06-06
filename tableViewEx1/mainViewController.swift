@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class mainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     let toplist = ["카페","지하철역","식당","영화관"]
     var bottomlist = StoreList.store
